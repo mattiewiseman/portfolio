@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mattilyn Wiseman | Executive Assistant & Operations Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dusty-rose: #D4A5A5;
+            --muted-terracotta: #C9ADA7;
+            --soft-sage: #9A8C98;
+            --muted-mauve: #B8A9B8;
+            --warm-taupe: #C8B8A8;
+            --cool-grey: #A5A5A8;
+            --soft-clay: #BDA59E;
+            --pale-mint: #B8C5B0;
+            --muted-teal: #8D9B9E;
+            --charcoal: #4A4E69;
+            --warm-grey: #6B6D76;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #F0EBE3 0%, #E8DDD8 25%, #DDD5D0 50%, #D8D3CD 75%, #E4DDD7 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: var(--charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating-shapes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.15;
+            animation: float 20s infinite ease-in-out;
+            filter: blur(60px);
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--dusty-rose) 0%, transparent 70%);
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--pale-mint) 0%, transparent 70%);
+            bottom: 5%;
+            right: -15%;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, var(--muted-mauve) 0%, transparent 70%);
+            top: 50%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+
+        .shape-4 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--warm-taupe) 0%, transparent 70%);
+            top: 30%;
+            left: 20%;
+            animation-delay: 3s;
+        }
+
+        .shape-5 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--muted-teal) 0%, transparent 70%);
+            bottom: 30%;
+            left: 50%;
+            animation-delay: 8s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            33% { transform: translate(50px, -50px) rotate(120deg) scale(1.1); }
+            66% { transform: translate(-30px, 30px) rotate(240deg) scale(0.9); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInDown 1s ease-out;
+            position: relative;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(212, 165, 165, 0.2), rgba(184, 197, 176, 0.2), rgba(184, 169, 184, 0.2));
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.4; }
+            50% { transform: translateX(-50%) scale(1.1); opacity: 0.6; }
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--dusty-rose), var(--muted-teal), var(--muted-mauve));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            animation: shimmer 3s ease-in-out infinite;
+            letter-spacing: 1px;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            font-weight: 500;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: var(--warm-grey);
+        }
+
+        .contact-info a {
+            color: var(--muted-teal);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .contact-info a:hover {
+            background: rgba(141, 155, 158, 0.15);
+            color: var(--dusty-rose);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            margin-bottom: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--dusty-rose), var(--pale-mint), var(--muted-mauve), var(--warm-taupe), var(--muted-teal));
+            background-size: 200% auto;
+            animation: gradientSlide 3s linear infinite;
+        }
+
+        @keyframes gradientSlide {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+
+        h2 {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, var(--dusty-rose), var(--muted-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--dusty-rose), var(--pale-mint));
+            border-radius: 2px;
+        }
+
+        .summary {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: var(--charcoal);
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(200, 184, 168, 0.08), rgba(184, 197, 176, 0.08));
+            border-radius: 20px;
+            border-left: 5px solid var(--dusty-rose);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(212, 165, 165, 0.1), rgba(184, 197, 176, 0.1));
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .skill-category:hover::before {
+            opacity: 1;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(212, 165, 165, 0.2);
+            border-color: var(--dusty-rose);
+        }
+
+        .skill-category h3 {
+            font-size: 1.4rem;
+            color: var(--muted-teal);
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-category li {
+            padding: 12px 0;
+            color: var(--charcoal);
+            position: relative;
+            padding-left: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category li:hover {
+            transform: translateX(5px);
+        }
+
+        .skill-category li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--dusty-rose);
+            font-size: 1.2rem;
+            line-height: 1;
+            top: 12px;
+        }
+
+        .experience-item {
+            margin-bottom: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(141, 155, 158, 0.06), rgba(212, 165, 165, 0.06));
+            border-radius: 25px;
+            border-left: 6px solid var(--pale-mint);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 5px 20px rgba(184, 197, 176, 0.25);
+        }
+
+        .job-header {
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-size: 1.6rem;
+            color: var(--muted-teal);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .job-details {
+            color: var(--dusty-rose);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .job-description {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        .job-description li {
+            padding: 12px 0;
+            color: var(--charcoal);
+            position: relative;
+            padding-left: 35px;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        .job-description li:hover {
+            padding-left: 40px;
+            color: var(--muted-teal);
+        }
+
+        .job-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--pale-mint);
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .job-description li:hover::before {
+            color: var(--dusty-rose);
+            transform: translateX(5px);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .education-item {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(184, 169, 184, 0.12), rgba(200, 184, 168, 0.12));
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-item::after {
+            content: '🎓';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.15;
+        }
+
+        .education-item:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 0 20px 40px rgba(184, 169, 184, 0.25);
+            border-color: var(--muted-mauve);
+        }
+
+        .degree {
+            font-size: 1.4rem;
+            color: var(--muted-teal);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .school {
+            color: var(--warm-grey);
+            font-size: 1.1rem;
+        }
+
+n) {
+            background: linear-gradient(135deg, var(--muted-mauve), var(--muted-teal));
+            box-shadow: 0 5px 15px rgba(184, 169, 184, 0.25);
+        }
+
+        .skill-badge:nth-child(3n):hover {
+            box-shadow: 0 10px 30px rgba(184, 169, 184, 0.4);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: var(--charcoal);
+            font-size: 1rem;
+            animation: fadeInUp 1.5s ease-out;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+
+            .section {
+                padding: 35px 25px;
+            }
+
+            .skills-grid,
+            .education-grid,
+            .additional-skills {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--dusty-rose), var(--pale-mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-15px); }
+            60% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        /* Decorative elements */
+        .decorative-circle {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212, 165, 165, 0.2), transparent);
+            top: 20%;
+            right: 5%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(184, 197, 176, 0.2), transparent);
+            bottom: 20%;
+            left: 10%;
+            animation: float 18s infinite ease-in-out reverse;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+
+    <div class="container">
+        <header>
+            <div class="header-bg"></div>
+            <h1>Mattilyn Wiseman</h1>
+            <p class="tagline">Executive Assistant & Operations Professional</p>
+            <div class="contact-info">
+                Los Angeles, CA | 
+                <a href="tel:5756940088">575.694.0088</a> | 
+                <a href="mailto:mattiedwiseman@gmail.com">mattiedwiseman@gmail.com</a> | 
+                <a href="http://www.linkedin.com/in/mattilyn-w-29b098145" target="_blank">LinkedIn</a>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                Results-driven and proactive assistant with a track record of supporting creative entrepreneurs and backend administrative tasks for companies large & small. Skilled in project coordination, client relations, and operations management across various industries. Experienced in managing complex schedules, coordinating logistics, and serving as a trusted right-hand to company leadership. Passionate about supporting women-led businesses and bringing organization to creative environments.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Operations & Administration</h3>
+                    <ul>
+                        <li>Calendar and email management</li>
+                        <li>Project coordination and production support</li>
+                        <li>Vendor and contractor relations</li>
+                        <li>Budget tracking and expense management</li>
+                        <li>CRM and database management</li>
+                        <li>Lean AI/LLM tool integration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Creative Industry Knowledge</h3>
+                    <ul>
+                        <li>Client onboarding and relationship management</li>
+                        <li>Creative brief development and management</li>
+                        <li>Project coordination</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical Proficiency</h3>
+                    <ul>
+                        <li>G Suite (Gmail, Calendar, Drive, Docs, Sheets)</li>
+                        <li>Microsoft Office (Excel, Word, Outlook, OneDrive)</li>
+                        <li>Project management tools (Asana, Monday.com, Trello)</li>
+                        <li>CRM platforms (Notion, Salesforce)</li>
+                        <li>Dropbox, DocuSign, WeTransfer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Administrative Assistant/Auditor</div>
+                    <div class="job-details">Pasadena, CA | July 2025 - Current</div>
+                </div>
+                <ul class="job-description">
+                    <li>Manage comprehensive operations for 60 employer accounts representing $200M+ in combined payroll, coordinating with multiple stakeholders and ensuring seamless workflow execution</li>
+                    <li>Reconciled $2M+ in annual financial discrepancies through meticulous tracking and verification processes, achieving 99.8% accuracy</li>
+                    <li>Engineered automated workflows using Excel and Python that reduced manual processing time by 50%, improving efficiency and high data quality</li>
+                    <li>Built interactive dashboards for real-time tracking and KPI monitoring, enabling data-driven reporting for each project</li>
+                    <li>Handled client communication, audit scheduling, documentation protocols, and contract compliance tracking</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Research Coordinator</div>
+                    <div class="job-details">University of New Mexico | Albuquerque, NM | August 2022 - August 2025</div>
+                </div>
+                <ul class="job-description">
+                    <li>Managed end-to-end operations for research project involving 500+ participants, coordinating recruitment, scheduling, data collection, and analysis across multiple phases</li>
+                    <li>Served as primary liaison between research team, participants, and institutional stakeholders, ensuring clear communication and project milestone completion</li>
+                    <li>Coordinated team of 6 members, delegating tasks, maintaining project timelines, and ensuring 100% documentation compliance throughout project lifecycle</li>
+                    <li>Secured $30,000 in continued funding by preparing compelling reports and presentations demonstrating project impact and ROI to grant committees</li>
+                    <li>Designed and implemented standardized workflows that increased team processing efficiency by 25% through systematic process improvements</li>
+                    <li>Managed project budgets, expenses, processed vendor payments, and maintained accurate financial records throughout grant period</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Personal Assistant</div>
+                    <div class="job-details">Independent Contract | Albuquerque, NM | August 2021 - March 2022</div>
+                </div>
+                <ul class="job-description">
+                    <li>Managed all aspects of my client's calendar, travel, and correspondence, optimizing time for high-value client meetings and creative sessions</li>
+                    <li>Coordinated logistics for 20+ travel events annually, including location scouting, location contracts, client scheduling, and budget tracking</li>
+                    <li>Served as primary liaison for client communication, ensuring seamless rapport and project coordination</li>
+                    <li>Developed and maintained client databases, scheduling, expense reports, and revenue in CRM systems</li>
+                    <li>Streamlined internal operations by implementing new project management systems, reducing errors by 15%</li>
+                    <li>Managed accounts payable/receivable, processed invoices, and maintained financial records for production projects</li>
+                    <li>Prepared proposals and creative briefs for new creative development opportunities</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Administrative Coordinator / Patient Services Tech</div>
+                    <div class="job-details">University of New Mexico | Albuquerque, NM | 2019 - 2021</div>
+                </div>
+                <ul class="job-description">
+                    <li>Processed and validated high-volume patient data with 99.9% accuracy, ensuring HIPAA compliance and data integrity in electronic health record systems</li>
+                    <li>Coordinated with multidisciplinary teams in fast-paced emergency department, maintaining accurate real-time documentation under pressure</li>
+                    <li>Generated operational reports and identified process bottlenecks, recommending data-driven improvements to department workflows</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="degree">Psychology, M.S./Ph.D.</div>
+                    <div class="school">University of New Mexico | Albuquerque, NM | December 2025</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Psychology, B.A.</div>
+                    <div class="school">University of New Mexico | Albuquerque, NM | May 2022</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Additional Skills & Interests</h2>
+            <div class="additional-skills">
+                <div class="skill-badge">Proactive Problem-Solving</div>
+                <div class="skill-badge">Excellent Communication</div>
+                <div class="skill-badge">Fast-Paced Environments</div>
+                <div class="skill-badge">Detail-Oriented Organization</div>
+                <div class="skill-badge">Lifestyle & Wellness Brands</div>
+                <div class="skill-badge">Visual Storytelling</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>✨ References available upon request ✨</p>
+        </footer>
+    </div>
+
+    <div class="scroll-indicator"></div>
+
+    <script>
+        // Fade out scroll indicator when user scrolls
+        window.addEventListener('scroll', function() {
+            const indicator = document.querySelector('.scroll-indicator');
+            if (window.scrollY > 150) {
+                indicator.style.opacity = '0';
+            } else {
+                indicator.style.opacity = '1';
+            }
+        });
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Enhanced parallax effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY;
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.08;
+                shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+
+            const circles = document.querySelectorAll('.decorative-circle');
+            circles.forEach((circle, index) => {
+                const speed = index === 0 ? 0.05 : -0.05;
+                circle.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Mouse movement parallax
+        document.addEventListener('mousemove', function(e) {
+            const shapes = document.querySelectorAll('.shape');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 20;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                shape.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
